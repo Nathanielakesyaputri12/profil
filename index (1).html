@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata Digital - Nathaniela Kesya Putri</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js for data visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Google Fonts for modern typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Custom styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .arabic-font {
+            font-family: 'Noto Naskh Arabic', serif;
+            direction: rtl;
+        }
+        .aksara-jawa {
+            font-size: 1.1em;
+            line-height: 2;
+        }
+        /* Gradient background for visual appeal */
+        body {
+            background-color: #f3f4f6;
+            background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        .card {
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .lang-btn {
+            transition: all 0.3s ease;
+        }
+        .lang-btn.active {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .chart-container {
+            max-width: 300px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body class="min-h-screen text-gray-800 p-4 sm:p-6 md:p-8">
+
+    <div id="main-container" class="max-w-5xl mx-auto card rounded-2xl shadow-2xl overflow-hidden">
+        <!-- Header Section -->
+        <header class="p-6 md:p-8 bg-gray-800 text-white relative">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="text-center md:text-left">
+                    <h1 class="text-3xl md:text-4xl font-bold" data-translate-key="name">NATHANIELA KESYA PUTRI</h1>
+                    <p class="text-lg text-gray-300" data-translate-key="status">Pelajar</p>
+                </div>
+                 <img src="kesyaaa.jpeg" alt="Foto Profil" class="rounded-full border-4 border-white shadow-lg w-24 h-24 md:w-32 md:h-32 mt-4 md:mt-0">
+            </div>
+             <!-- Language Switcher -->
+            <div class="flex justify-center md:justify-start space-x-2 mt-6">
+                <button onclick="changeLanguage('id')" class="lang-btn active bg-purple-500 hover:bg-purple-600 text-white text-xs font-bold py-2 px-3 rounded-full" data-lang="id">Indonesia</button>
+                <button onclick="changeLanguage('en')" class="lang-btn bg-blue-500 hover:bg-blue-600 text-white text-xs font-bold py-2 px-3 rounded-full" data-lang="en">English</button>
+                <button onclick="changeLanguage('jv')" class="lang-btn bg-green-500 hover:bg-green-600 text-white text-xs font-bold py-2 px-3 rounded-full" data-lang="jv">Basa Jawi</button>
+                <button onclick="changeLanguage('ar')" class="lang-btn bg-red-500 hover:bg-red-600 text-white text-xs font-bold py-2 px-3 rounded-full" data-lang="ar">العربية</button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="p-6 md:p-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Left Column -->
+            <div class="md:col-span-1 space-y-6">
+                <!-- Kontak -->
+                <section>
+                    <h2 class="text-xl font-bold border-b-2 border-purple-300 pb-2 mb-3" data-translate-key="contactTitle">KONTAK</h2>
+                    <div class="space-y-2 text-sm">
+                        <p><strong><span data-translate-key="phone">No. Tlpn</span>:</strong> <span data-translate-key="phoneValue">+62 857-1336-3670</span></p>
+                        <p><strong><span data-translate-key="email">Email</span>:</strong> <span data-translate-key="emailValue">niellaput@gmail.com</span></p>
+                        <p><strong><span data-translate-key="instagram">Instagram</span>:</strong> <span data-translate-key="instagramValue">@niellasy_</span></p>
+                    </div>
+                </section>
+                
+                <!-- Data Diri -->
+                <section>
+                    <h2 class="text-xl font-bold border-b-2 border-purple-300 pb-2 mb-3" data-translate-key="personalDataTitle">DATA DIRI</h2>
+                    <div class="space-y-2 text-sm">
+                        <p><strong><span data-translate-key="birth">Tempat, Tgl Lahir</span>:</strong> <span data-translate-key="birthValue">Pekalongan, 09 Februari 2009</span></p>
+                        <p><strong><span data-translate-key="gender">Jenis Kelamin</span>:</strong> <span data-translate-key="genderValue">Perempuan</span></p>
+                        <p><strong><span data-translate-key="religion">Agama</span>:</strong> <span data-translate-key="religionValue">Islam</span></p>
+                         <p><strong><span data-translate-key="address">Alamat</span>:</strong> <span data-translate-key="addressValue">Perum Pepabri Tanjung Tirto, B.14 NO.14 RT 04/RW 03, Kab. Pekalongan</span></p>
+                    </div>
+                </section>
+                
+                <!-- Keterampilan -->
+                <section>
+                    <h2 class="text-xl font-bold border-b-2 border-purple-300 pb-2 mb-3" data-translate-key="skillsTitle">KETERAMPILAN</h2>
+                    <ul class="list-disc list-inside text-sm space-y-1">
+                        <li data-translate-key="skill1">Mengoperasikan Microsoft Office</li>
+                        <li data-translate-key="skill2">Desain grafis</li>
+                    </ul>
+                </section>
+            </div>
+            
+            <!-- Right Column -->
+            <div class="md:col-span-2 space-y-6">
+                <!-- Moto Hidup & Cita-cita -->
+                <section>
+                    <div class="bg-purple-100 border-l-4 border-purple-500 text-purple-700 p-4 rounded-r-lg">
+                        <h3 class="font-bold mb-1" data-translate-key="mottoTitle">MOTO HIDUP</h3>
+                        <p class="italic text-sm" data-translate-key="mottoValue">"Kuatkan hati dan teruslah melangkah ke depan. Percayalah pada proses, karena setiap langkah kecil akan membawamu lebih dekat dengan tujuan."</p>
+                        <h3 class="font-bold mt-3" data-translate-key="ambitionTitle">CITA-CITA</h3>
+                        <p class="text-sm" data-translate-key="ambitionValue">Pengusaha Sukses</p>
+                    </div>
+                </section>
+
+                <!-- Harapan Masa Depan -->
+                <section>
+                    <h2 class="text-xl font-bold border-b-2 border-yellow-300 pb-2 mb-3" data-translate-key="futureHopeTitle">HARAPAN MASA DEPAN</h2>
+                    <p class="text-sm italic" data-translate-key="futureHopeValue">Aku ingin menjadi orang yang lebih baik dan membuat perbedaan positif di dunia.</p>
+                </section>
+
+                <!-- Riwayat Pendidikan -->
+                <section>
+                    <h2 class="text-xl font-bold border-b-2 border-blue-300 pb-2 mb-3" data-translate-key="educationTitle">RIWAYAT PENDIDIKAN</h2>
+                    <div class="space-y-2 text-sm">
+                        <p><strong>SD:</strong> <span data-translate-key="sd">SD N Pacar (2015-2021)</span></p>
+                        <p><strong>SMP:</strong> <span data-translate-key="smp">SMP N 1 Tirto (2021-2024)</span></p>
+                    </div>
+                </section>
+
+                <!-- Pengalaman -->
+                 <section>
+                    <h2 class="text-xl font-bold border-b-2 border-green-300 pb-2 mb-3" data-translate-key="experienceTitle">PENGALAMAN</h2>
+                    <ul class="list-disc list-inside text-sm space-y-1">
+                        <li data-translate-key="exp1">Jadi anggota OSIS di tahun 2025.</li>
+                        <li data-translate-key="exp2">Selalu menjadi pembawa acara saat upacara di SD.</li>
+                    </ul>
+                </section>
+                
+                <!-- Prestasi -->
+                <section>
+                    <h2 class="text-xl font-bold border-b-2 border-red-300 pb-2 mb-3" data-translate-key="achievementsTitle">PRESTASI</h2>
+                    <ul class="list-disc list-inside text-sm space-y-1">
+                        <li data-translate-key="ach1">Juara 1 tartil, 2018.</li>
+                        <li data-translate-key="ach2">Peserta LCC bidang IPA.</li>
+                    </ul>
+                </section>
+            </div>
+        </main>
+        
+        <!-- Data Analysis Section -->
+        <footer class="bg-gray-100 p-6 md:p-8 mt-6">
+            <h2 class="text-2xl font-bold text-center mb-6" data-translate-key="analysisTitle">STATISTIK & ANALISIS PRIBADI</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center mb-8">
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <h3 class="font-bold text-purple-600" data-translate-key="avgActivity">Rata-rata Aktivitas/Minggu</h3>
+                    <p id="avg-activity-value" class="text-2xl font-light">83.5 Jam</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <h3 class="font-bold text-blue-600" data-translate-key="hobbyMode">Hobi Paling Sering</h3>
+                    <p id="hobby-mode-value" class="text-2xl font-light">Membaca</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <h3 class="font-bold text-green-600" data-translate-key="academicPercentage">Prestasi Akademik</h3>
+                    <p id="academic-percentage-value" class="text-2xl font-light">50%</p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                 <!-- Bar Chart for Activities -->
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <h3 class="text-center font-bold mb-2" data-translate-key="weeklyActivityChartTitle">Diagram Aktivitas Mingguan (Jam)</h3>
+                    <div class="chart-container">
+                        <canvas id="activityChart"></canvas>
+                    </div>
+                </div>
+                
+                <!-- Pie Chart for Achievements -->
+                <div class="bg-white p-4 rounded-lg shadow">
+                     <h3 class="text-center font-bold mb-2" data-translate-key="achievementChartTitle">Diagram Jenis Prestasi</h3>
+                    <div class="chart-container">
+                        <canvas id="achievementChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        // --- TRANSLATION DATA ---
+        const translations = {
+            id: {
+                name: "NATHANIELA KESYA PUTRI",
+                status: "Pelajar",
+                contactTitle: "KONTAK",
+                phone: "No. Tlpn",
+                phoneValue: "+62 857-1336-3670",
+                email: "Email",
+                emailValue: "niellaput@gmail.com",
+                instagram: "Instagram",
+                instagramValue: "@niellasy_",
+                personalDataTitle: "DATA DIRI",
+                birth: "Tempat, Tgl Lahir",
+                birthValue: "Pekalongan, 09 Februari 2009",
+                gender: "Jenis Kelamin",
+                genderValue: "Perempuan",
+                religion: "Agama",
+                religionValue: "Islam",
+                address: "Alamat",
+                addressValue: "Perum Pepabri Tanjung Tirto, B.14 NO.14 RT 04/RW 03, Kab. Pekalongan",
+                skillsTitle: "KETERAMPILAN",
+                skill1: "Mengoperasikan Microsoft Office",
+                skill2: "Desain grafis",
+                mottoTitle: "MOTO HIDUP",
+                mottoValue: "\"Kuatkan hati dan teruslah melangkah ke depan. Percayalah pada proses, karena setiap langkah kecil akan membawamu lebih dekat dengan tujuan.\"",
+                ambitionTitle: "CITA-CITA",
+                ambitionValue: "Pengusaha Sukses",
+                futureHopeTitle: "HARAPAN MASA DEPAN",
+                futureHopeValue: "Aku ingin menjadi orang yang lebih baik dan membuat perbedaan positif di dunia.",
+                educationTitle: "RIWAYAT PENDIDIKAN",
+                sd: "SD N Pacar (2015-2021)",
+                smp: "SMP N 1 Tirto (2021-2024)",
+                experienceTitle: "PENGALAMAN",
+                exp1: "Jadi anggota OSIS di tahun 2025.",
+                exp2: "Selalu menjadi pembawa acara saat upacara di SD.",
+                achievementsTitle: "PRESTASI",
+                ach1: "Juara 1 tartil, 2018.",
+                ach2: "Peserta LCC bidang IPA.",
+                analysisTitle: "STATISTIK & ANALISIS PRIBADI",
+                avgActivity: "Rata-rata Aktivitas/Minggu",
+                hobbyMode: "Hobi Paling Sering",
+                academicPercentage: "Prestasi Akademik",
+                weeklyActivityChartTitle: "Diagram Aktivitas Mingguan (Jam)",
+                achievementChartTitle: "Diagram Jenis Prestasi",
+            },
+            en: {
+                name: "NATHANIELA KESYA PUTRI",
+                status: "Student",
+                contactTitle: "CONTACT",
+                phone: "Phone No.",
+                phoneValue: "+62 857-1336-3670",
+                email: "Email",
+                emailValue: "niellaput@gmail.com",
+                instagram: "Instagram",
+                instagramValue: "@niellasy_",
+                personalDataTitle: "PERSONAL DATA",
+                birth: "Place, Date of Birth",
+                birthValue: "Pekalongan, February 9, 2009",
+                gender: "Gender",
+                genderValue: "Female",
+                religion: "Religion",
+                religionValue: "Islam",
+                address: "Address",
+                addressValue: "Perum Pepabri Tanjung Tirto, B.14 NO.14 RT 04/RW 03, Pekalongan Regency",
+                skillsTitle: "SKILLS",
+                skill1: "Microsoft Office Operations",
+                skill2: "Graphic Design",
+                mottoTitle: "LIFE MOTTO",
+                mottoValue: "\"Strengthen your heart and keep moving forward. Trust the process, because every small step will bring you closer to your goal.\"",
+                ambitionTitle: "AMBITION",
+                ambitionValue: "Successful Entrepreneur",
+                futureHopeTitle: "FUTURE HOPE",
+                futureHopeValue: "I want to become a better person and make a positive difference in the world.",
+                educationTitle: "EDUCATION HISTORY",
+                sd: "Pacar Elementary School (2015-2021)",
+                smp: "Tirto 1 Junior High School (2021-2024)",
+                experienceTitle: "EXPERIENCE",
+                exp1: "Became a member of the Student Council in 2025.",
+                exp2: "Always served as the master of ceremonies at school ceremonies in elementary school.",
+                achievementsTitle: "ACHIEVEMENTS",
+                ach1: "1st place in Tartil, 2018.",
+                ach2: "Participant in Science smart competition (LCC).",
+                analysisTitle: "PERSONAL STATISTICS & ANALYSIS",
+                avgActivity: "Average Activity/Week",
+                hobbyMode: "Most Frequent Hobby",
+                academicPercentage: "Academic Achievements",
+                weeklyActivityChartTitle: "Weekly Activity Chart (Hours)",
+                achievementChartTitle: "Achievement Type Chart",
+            },
+            jv: {
+                name: "<span class='aksara-jawa'>ꦤꦡꦤꦶꦪꦺꦭꦏꦺꦱꦾꦥꦸꦠꦿꦶ</span> (Nathaniela Kesya Putri)",
+                status: "Siswa",
+                contactTitle: "<span class='aksara-jawa'>ꦏꦺꦴꦤ꧀ꦠꦏ꧀</span> (KONTAK)",
+                phone: "No. Telpon",
+                phoneValue: "+62 857-1336-3670",
+                email: "Email",
+                emailValue: "niellaput@gmail.com",
+                instagram: "Instagram",
+                instagramValue: "@niellasy_",
+                personalDataTitle: "<span class='aksara-jawa'>ꦝꦠꦥꦿꦶꦧꦢꦶ</span> (DHATA PRIBADI)",
+                birth: "Papan, Tanggal Lair",
+                birthValue: "Pekalongan, 09 Februari 2009",
+                gender: "Jinis Kelamin",
+                genderValue: "Estri",
+                religion: "Agami",
+                religionValue: "Islam",
+                address: "Alamat",
+                addressValue: "Perum Pepabri Tanjung Tirto, B.14 NO.14 RT 04/RW 03, Kab. Pekalongan",
+                skillsTitle: "<span class='aksara-jawa'>ꦏꦱꦒꦼꦢꦤ꧀</span> (KASAGEDAN)",
+                skill1: "Ngoperasikaken Microsoft Office",
+                skill2: "Desain grafis",
+                mottoTitle: "SESANTI GESANG",
+                mottoValue: "\"Kiyataken manah lan teras mlampah majeng. Pitados dhateng proses, amargi saben langkah alit badhe mbekta panjenengan langkung celak kaliyan tujuan.\"",
+                ambitionTitle: "GEGAYUHAN",
+                ambitionValue: "Pengusaha Sukses",
+                futureHopeTitle: "<span class='aksara-jawa'>ꦥꦔꦗꦧ꧀ꦩꦁꦱꦔꦗꦼꦁ</span> (Pangajab Mangsa Ngajeng)",
+                futureHopeValue: "Kula kersa dados pribadi ingkang langkung sae lan damel prabédan positif ing donya.",
+                educationTitle: "<span class='aksara-jawa'>ꦫꦶꦮꦪꦠ꧀ꦥꦼꦤ꧀ꦝꦶꦝꦶꦏꦤ꧀</span> (RIWAYAT PENDIDHIKAN)",
+                sd: "SD N Pacar (2015-2021)",
+                smp: "SMP N 1 Tirto (2021-2024)",
+                experienceTitle: "<span class='aksara-jawa'>ꦥꦔꦭꦩꦤ꧀</span> (PANGALAMAN)",
+                exp1: "Dados anggota OSIS ing warsa 2025.",
+                exp2: "Tansah dados pranatacara nalika upacara ing SD.",
+                achievementsTitle: "<span class='aksara-jawa'>ꦥꦿꦺꦱ꧀ꦠꦱꦶ</span> (PRESTASI)",
+                ach1: "Juara 1 tartil, 2018.",
+                ach2: "Peserta LCC bidang IPA.",
+                analysisTitle: "STATISTIK & ANALISIS PRIBADI",
+                avgActivity: "Rata-rata Kagiyatan/Minggu",
+                hobbyMode: "Hobi Paling Asring",
+                academicPercentage: "Prestasi Akademik",
+                weeklyActivityChartTitle: "Diagram Kagiyatan Minggon (Jam)",
+                achievementChartTitle: "Diagram Jinis Prestasi",
+            },
+            ar: {
+                name: "ناثانييلا كيسيا بوتري",
+                status: "طالبة",
+                contactTitle: "معلومات الاتصال",
+                phone: "رقم الهاتف",
+                phoneValue: "+62 857-1336-3670",
+                email: "البريد الإلكتروني",
+                emailValue: "niellaput@gmail.com",
+                instagram: "انستغرام",
+                instagramValue: "@niellasy_",
+                personalDataTitle: "البيانات الشخصية",
+                birth: "مكان وتاريخ الميلاد",
+                birthValue: "بيكالونجان، 09 فبراير 2009",
+                gender: "الجنس",
+                genderValue: "أنثى",
+                religion: "الدين",
+                religionValue: "الإسلام",
+                address: "العنوان",
+                addressValue: "مجمع بيبابري تانجونج تيرتو، B.14 رقم 14 RT 04/RW 03، مقاطعة بيكالونجان",
+                skillsTitle: "المهارات",
+                skill1: "إجادة استخدام مايكروسوفت أوفيس",
+                skill2: "تصميم الجرافيك",
+                mottoTitle: "شعار الحياة",
+                mottoValue: "\"قوِّي قلبك واستمر في المضي قدمًا. ثق بالعملية، لأن كل خطوة صغيرة ستقربك من هدفك.\"",
+                ambitionTitle: "الطموح",
+                ambitionValue: "سيدة أعمال ناجحة",
+                futureHopeTitle: "أمل المستقبل",
+                futureHopeValue: "أريد أن أصبح شخصًا أفضل وأن أحدث فرقًا إيجابيًا في العالم.",
+                educationTitle: "السجل التعليمي",
+                sd: "مدرسة باتشار الابتدائية (2015-2021)",
+                smp: "مدرسة تيرتو 1 الإعدادية (2021-2024)",
+                experienceTitle: "الخبرات",
+                exp1: "عضو في مجلس الطلاب عام 2025.",
+                exp2: "دائماً ما كنتُ عريفة الحفل في المراسم المدرسية بالمرحلة الابتدائية.",
+                achievementsTitle: "الإنجازات",
+                ach1: "المركز الأول في الترتيل، 2018.",
+                ach2: "مشاركة في مسابقة العلوم الذكية (LCC).",
+                analysisTitle: "الإحصاءات والتحليلات الشخصية",
+                avgActivity: "متوسط النشاط/الأسبوع",
+                hobbyMode: "الهواية الأكثر ممارسة",
+                academicPercentage: "الإنجازات الأكاديمية",
+                weeklyActivityChartTitle: "مخطط الأنشطة الأسبوعية (ساعات)",
+                achievementChartTitle: "مخطط نوع الإنجازات",
+            }
+        };
+
+        // --- LANGUAGE SWITCHER LOGIC ---
+        const mainContainer = document.getElementById('main-container');
+        const langButtons = document.querySelectorAll('.lang-btn');
+        
+        function changeLanguage(lang) {
+            const elements = document.querySelectorAll('[data-translate-key]');
+            elements.forEach(el => {
+                const key = el.dataset.translateKey;
+                if (translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            // Handle Right-to-Left for Arabic
+            if (lang === 'ar') {
+                mainContainer.classList.add('arabic-font');
+            } else {
+                mainContainer.classList.remove('arabic-font');
+            }
+            
+            // Update active button style
+            langButtons.forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.dataset.lang === lang) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        // --- DATA CALCULATION & CHARTING LOGIC ---
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Data Calculation
+            const dailyActivities = {
+                membaca: 3.5, // Rata-rata 3-4 jam
+                memasak: 1,
+                mainGame: 1,
+                sekolah: 8,
+                tidur: 7,
+                cuciPiring: 0.5
+            };
+
+            const weeklyHours = {
+                membaca: dailyActivities.membaca * 7,
+                memasak: dailyActivities.memasak * 7,
+                mainGame: dailyActivities.mainGame * 7,
+                sekolah: dailyActivities.sekolah * 5, // 5 hari seminggu
+                tidur: dailyActivities.tidur * 7,
+                cuciPiring: dailyActivities.cuciPiring * 7
+            };
+
+            const totalWeeklyHours = Object.values(weeklyHours).reduce((sum, hours) => sum + hours, 0);
+            document.getElementById('avg-activity-value').innerText = `${totalWeeklyHours} Jam`;
+
+            // Modus Hobi
+            const hobbies = { Membaca: weeklyHours.membaca, Memasak: weeklyHours.memasak, Bermain_Game: weeklyHours.mainGame };
+            const hobbyMode = Object.keys(hobbies).reduce((a, b) => hobbies[a] > hobbies[b] ? a : b);
+            document.getElementById('hobby-mode-value').innerText = hobbyMode.replace('_', ' ');
+
+            // Persentase Prestasi
+            const totalPrestasi = 2; // 1 tartil (non-akademik), 1 LCC IPA (akademik)
+            const prestasiAkademik = 1;
+            const academicPercentage = (prestasiAkademik / totalPrestasi) * 100;
+            document.getElementById('academic-percentage-value').innerText = `${academicPercentage}%`;
+
+
+            // 2. Chart Rendering
+            // Bar Chart for Activities
+            const activityCtx = document.getElementById('activityChart').getContext('2d');
+            new Chart(activityCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Sekolah', 'Tidur', 'Membaca', 'Memasak', 'Game', 'Cuci Piring'],
+                    datasets: [{
+                        label: 'Jam per Minggu',
+                        data: [weeklyHours.sekolah, weeklyHours.tidur, weeklyHours.membaca, weeklyHours.memasak, weeklyHours.mainGame, weeklyHours.cuciPiring],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.7)', // Merah Muda Cerah
+                            'rgba(54, 162, 235, 0.7)', // Biru Cerah
+                            'rgba(255, 206, 86, 0.7)', // Kuning Cerah
+                            'rgba(75, 192, 192, 0.7)', // Tosca Cerah
+                            'rgba(153, 102, 255, 0.7)', // Ungu Cerah
+                            'rgba(255, 159, 64, 0.7)'  // Oranye Cerah
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                             'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { beginAtZero: true }
+                    }
+                }
+            });
+
+            // Pie Chart for Achievements
+            const achievementCtx = document.getElementById('achievementChart').getContext('2d');
+            new Chart(achievementCtx, {
+                type: 'pie',
+                data: {
+                    labels: ['Akademik', 'Non-Akademik'],
+                    datasets: [{
+                        data: [prestasiAkademik, totalPrestasi - prestasiAkademik],
+                        backgroundColor: [
+                            'rgba(50, 205, 50, 0.8)', // Hijau Limau
+                            'rgba(255, 20, 147, 0.8)' // Merah Jambu Tua
+                        ],
+                        borderColor: [
+                            'rgba(50, 205, 50, 1)',
+                            'rgba(255, 20, 147, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                }
+            });
+
+            // Set initial language
+            changeLanguage('id');
+        });
+
+    </script>
+
+</body>
+</html>
+
